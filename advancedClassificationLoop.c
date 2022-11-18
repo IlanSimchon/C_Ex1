@@ -37,7 +37,6 @@ int isPalindrome(int n) {
 int countDigits (int n)
 {
     int counter_digit = 0;
-    if (n == 0) return TRUE;
     while (n != 0)
         {
             n = n / 10;
@@ -53,6 +52,7 @@ int isArmstrong(int n) {
     int remainder, temp, input, counter_digit,sum = 0;
     printf("Please enter an integer to check and then press Enter or Control+Z");
     scanf("%d", &input);
+    if (n == 0) return TRUE;
     input = n;
     counter_digit = countDigits(n);
 
