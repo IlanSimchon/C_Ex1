@@ -31,25 +31,36 @@ int isPalindrome(int n) {
         }
     return FALSE
 }
-/* will return if a number is Armstrong number*/
-/* An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits */
 
-int isArmstrong(int n) {
-    int remainder, temp, input, sum = 0, counter_digit = 0;
-    printf("Please enter an integer to check and then press Enter or Control+Z");
-    scanf("%d", &input);
-    input = temp = n;
+/* A helper function that calculates how many digits are in the input */
+
+int countDigits (int n)
+{
+    int counter_digit = 0;
     if (n == 0) return TRUE;
     while (n != 0)
         {
             n = n / 10;
             ++counter_digit;
         }
-    while (temp > 0)
+    return counter_digit ;
+}
+
+/* will return if a number is Armstrong number*/
+/* An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits */
+
+int isArmstrong(int n) {
+    int remainder, temp, input, counter_digit,sum = 0;
+    printf("Please enter an integer to check and then press Enter or Control+Z");
+    scanf("%d", &input);
+    input = n;
+    counter_digit = countDigits(n);
+
+    while (n > 0)
         {
             remainder = n % 10;
-            sum += pow(r, counter_digit);
-            n =/10;
+            sum += pow(remainder, counter_digit);
+            n = n / 10;
         }
     if (input == sum)
         {
@@ -61,5 +72,4 @@ int isArmstrong(int n) {
             printf("The number %d is not Armstrong\n", input);
             return FALSE;
         }
-    return FALSE;
 }
