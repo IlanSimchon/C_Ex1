@@ -49,7 +49,7 @@ int countDigits (int n)
 /* An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits */
 
 int isArmstrong(int n) {
-    int remainder, temp, input, counter_digit,sum = 0;
+    int remainder, input, counter_digit,sum = 0;
     printf("Please enter an integer to check and then press Enter or Control+Z");
     scanf("%d", &input);
     if (n == 0) return TRUE;
