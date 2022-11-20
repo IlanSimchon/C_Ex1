@@ -1,0 +1,4 @@
+node_modules /
+CMakeLists.txt
+.idea
+.DS_store
