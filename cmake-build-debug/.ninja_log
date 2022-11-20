@@ -1,0 +1,9 @@
+# ninja log v5
+1	63	1668896633545273077	CMakeFiles/C_Ex1.dir/basicClassification.c.o	11c2e9edb513e192
+2	332	1668956866026618530	CMakeFiles/C_Ex1.dir/advancedClassificationRecursion.c.o	8bdc9cf3045a1169
+0	44	1668898983010181677	CMakeFiles/C_Ex1.dir/main.c.o	eb34c39a28ea6f11
+1	325	1668956866015836903	CMakeFiles/C_Ex1.dir/advancedClassificationLoop.c.o	2db10c27cbe6f019
+74	139	1668955186630108614	C_Ex1	d634df4718947a88
+1	63	1668956900686941885	CMakeFiles/C_Ex1.dir/advancedClassificationRecursion.c.o	8bdc9cf3045a1169
+0	67	1668956931014355106	CMakeFiles/C_Ex1.dir/advancedClassificationRecursion.c.o	8bdc9cf3045a1169
+67	134	1668956931080973059	C_Ex1	d634df4718947a88

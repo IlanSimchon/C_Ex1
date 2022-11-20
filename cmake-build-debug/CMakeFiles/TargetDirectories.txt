@@ -1,0 +1,3 @@
+/Users/twmrgwzln/Desktop/C : C++/C_Ex1/cmake-build-debug/CMakeFiles/C_Ex1.dir
+/Users/twmrgwzln/Desktop/C : C++/C_Ex1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/twmrgwzln/Desktop/C : C++/C_Ex1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
