@@ -33,13 +33,13 @@ libclassloops.so: basicClassification.o advancedClassificationLoop.o
 
 # creating main programs
 
-mains: recursives main.o
+mains: libclassrec.a main.o
 	gcc -Wall -o mains main.o libclassrec.a $(Math)
 
-maindloop:  loopd main.o
+maindloop:  libclassloops.so main.o
 	gcc -Wall -o maindloop main.o ./libclassloops.so $(Math)
 
-maindrec: recursived main.o
+maindrec: libclassrec.so main.o
 	gcc -Wall -o maindrec main.o ./libclassrec.so $(Math)
 
 
