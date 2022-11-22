@@ -1,7 +1,7 @@
 Math = -lm
 CFLAG = -Wall -fPIC -c
 
-all: loops recursives recursived loopd mains maindloop maindrec
+all: loops loopd recursives recursived  mains maindloop maindrec
 
 loops:   basicClassification.o advancedClassificationLoop.o
 	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
