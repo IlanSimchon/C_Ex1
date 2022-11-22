@@ -9,7 +9,7 @@ int main(){
     scanf("%d", &end);
 
     // Armstrong
-    printf("the Armstrong numbers are: ");
+    printf("The Armstrong numbers are: ");
     for (int i = start; i < end; i++) {
         if(isArmstrong(i))
             printf("%d " ,i);
@@ -17,7 +17,7 @@ int main(){
     printf("\n");
 
     // Palindrome
-    printf("the Palindrome numbers: ");
+    printf("The Palindrome numbers: ");
     for (int i = start; i < end; i++) {
         if(isPalindrome(i))
             printf("%d " ,i);
@@ -25,7 +25,7 @@ int main(){
     printf("\n");
 
     // Prime
-    printf("the Prime numbers: ");
+    printf("The Prime numbers: ");
     for (int i = start; i < end; i++) {
         if(isPrime(i))
             printf("%d " ,i);
@@ -33,7 +33,7 @@ int main(){
     printf("\n");
 
     //Strong
-    printf("the Strong numbers are: ");
+    printf("The Strong numbers are: ");
     for (int i = start; i < end; i++) {
         if(isStrong(i))
             printf("%d " ,i);

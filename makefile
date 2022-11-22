@@ -1,6 +1,11 @@
 Math = -lm
 AR = ar -rcs
-CFLAG = -Wall -fPIC -c
+CFLAG = -Wall -g -fPIC -c
+
+all: loops loopd recursives recursived  mains maindloop maindrec
+
+
+# creating Libraries
 
 loops:   libclassloops.a
 
@@ -12,6 +17,7 @@ recursives: libclassrec.a
 
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
+
 
 recursived: libclassrec.so
 
@@ -25,6 +31,8 @@ libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	gcc -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 
 
+# creating main programs
+
 mains: recursives main.o
 	gcc -Wall -o mains main.o libclassrec.a $(Math)
 
@@ -35,10 +43,7 @@ maindrec: recursived main.o
 	gcc -Wall -o maindrec main.o ./libclassrec.so $(Math)
 
 
-all: loops loopd recursives recursived  mains maindloop maindrec
-
-
-
+# creating object files
 
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	gcc $(CFLAG) advancedClassificationLoop.c -o advancedClassificationLoop.o
@@ -52,5 +57,9 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 main.o: main.c NumClass.h
 	gcc -Wall -c main.c -o main.o $(Math)
 
+
+
+.PHONY: clean all loops loopd recursives recursived
+
 clean:
-	rm *.o *.so *.a mains maindloop maindrec
+	rm -f *.o *.so *.a mains maindloop maindrec

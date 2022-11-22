@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "NumClass.h"
 
 #define FALSE 0
 #define TRUE 1
