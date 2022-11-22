@@ -1,18 +1,27 @@
 Math = -lm
+AR = ar -rcs
 CFLAG = -Wall -fPIC -c
 
 all: loops loopd recursives recursived  mains maindloop maindrec
 
-loops:   basicClassification.o advancedClassificationLoop.o
-	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
+loops:   libclassloops.a
 
-recursives: basicClassification.o advancedClassificationRecursion.o
-	ar -rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o
+	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
 
-recursived: basicClassification.o advancedClassificationRecursion.o
+recursives: libclassrec.a
+
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o
+	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
+
+recursived: libclassrec.so
+
+libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	gcc -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
-loopd: basicClassification.o advancedClassificationLoop.o
+loopd: libclassloops.so
+
+libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	gcc -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 
 mains: recursives main.o
@@ -23,6 +32,9 @@ maindloop:  loopd main.o
 
 maindrec: recursived main.o
 	gcc -Wall -o maindrec main.o ./libclassrec.so $(Math)
+
+all: loops loopd recursives recursived  mains maindloop maindrec
+
 
 advancedClassificationLoop.o: advancedClassificationLoop.c
 	gcc $(CFLAG) advancedClassificationLoop.c -o advancedClassificationLoop.o
