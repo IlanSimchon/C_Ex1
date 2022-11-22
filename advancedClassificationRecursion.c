@@ -12,7 +12,7 @@ int powerRec(int base, int exponent) {
         return base * powerRec(base, exponent - 1);
     }
     else {
-        return 0;
+        return 1;
     }
 }
 /* the method will take a number and return the reverse of that number using recursion*/
@@ -38,15 +38,13 @@ int isPalindrome(int n) {
     }
 }
 
+
 /* A method will take an input of a number and calculate its number of digits using recursion */
 
 int countDigitsRec(int n) {
-    static int counter_digit = 0;
-    if (n != 0) {
-        ++counter_digit;
-        countDigitsRec(n/10);
-    }
-        return counter_digit;
+    if(n == 0)
+        return 0;
+    return countDigitsRec(n/10) + 1;
 }
 
 /* will return if a number is Armstrong number */
