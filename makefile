@@ -40,16 +40,16 @@ all: loops loopd recursives recursived  mains maindloop maindrec
 
 
 
-advancedClassificationLoop.o: advancedClassificationLoop.c
+advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	gcc $(CFLAG) advancedClassificationLoop.c -o advancedClassificationLoop.o
 
-basicClassification.o: basicClassification.c
+basicClassification.o: basicClassification.c NumClass.h
 	gcc $(CFLAG) basicClassification.c -o basicClassification.o $(Math)
 
-advancedClassificationRecursion.o: advancedClassificationRecursion.c
+advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	gcc $(CFLAG) advancedClassificationRecursion.c -o advancedClassificationRecursion.o $(Math)
 
-main.o: main.c
+main.o: main.c NumClass.h
 	gcc -Wall -c main.c -o main.o $(Math)
 
 clean:
