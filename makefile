@@ -13,8 +13,7 @@ recursives: libclassrec.a
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
 
-r
-ecursived: libclassrec.so
+recursived: libclassrec.so
 
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	gcc -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
